@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NyayaSetu — AI Civic Empowerment</title>
+  <meta name="author" content="Rajat Tailor - Arya College of Engineering and IT">
+  <meta name="description" content="NyayaSetu — AI for Civic and Legal Empowerment. Access government schemes, know your rights, and draft RTIs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Literata:opsz,wght@7..72,600;7..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="flag"><div></div><div></div><div></div></div>
+<div class="app">
+
+<!-- ═══ SIDEBAR ═══ -->
+<aside class="sb">
+  <div class="sb-blob sb-blob-1"></div><div class="sb-blob sb-blob-2"></div>
+  <div class="sb-head">
+    <div class="sb-brand">
+      <div class="sbm">⚖️</div>
+      <div class="sbn">Nyaya<em>Setu</em></div>
+    </div>
+    <div class="sb-tag" id="sb-tag-el">AI Civic & Legal Empowerment</div>
+  </div>
+  <nav class="sb-nav">
+    <div class="slbl">Main</div>
+    <div class="ni active" onclick="go('home')" data-p="home"><div class="ni-ico"><i data-lucide="layout-dashboard"></i></div>Dashboard</div>
+    <div class="ni" onclick="go('eligibility')" data-p="eligibility"><div class="ni-ico"><i data-lucide="target"></i></div>Scheme Eligibility</div>
+    <div class="ni" onclick="go('rights')" data-p="rights"><div class="ni-ico"><i data-lucide="scale"></i></div>Rights Navigator</div>
+    <div class="ni" onclick="go('rti')" data-p="rti"><div class="ni-ico"><i data-lucide="file-text"></i></div>RTI Drafting Agent</div>
+    <div class="slbl">Legal & AI Support</div>
+    <div class="ni" onclick="go('complaint')" data-p="complaint"><div class="ni-ico"><i data-lucide="clipboard-list"></i></div>File Complaint</div>
+    <div class="ni" onclick="go('legal')" data-p="legal"><div class="ni-ico"><i data-lucide="gavel"></i></div>Legal Guidance</div>
+    <div class="ni" onclick="go('grievance')" data-p="grievance"><div class="ni-ico"><i data-lucide="folder-search-2"></i></div>Grievance Portals</div>
+    <div class="ni" onclick="go('tracker')" data-p="tracker"><div class="ni-ico"><i data-lucide="search-check"></i></div>NSP Status Guide</div>
+    <div class="ni" onclick="go('helplines')" data-p="helplines"><div class="ni-ico"><i data-lucide="phone"></i></div>Helplines</div>
+    <div class="ni" onclick="go('ai')" data-p="ai"><div class="ni-ico"><i data-lucide="bot"></i></div>Conversational AI</div>
+  </nav>
+</aside>
+
+<!-- ═══ MAIN ═══ -->
+<div class="main">
+<div class="abar">
+    <div class="ab-l">
+      <span class="ab-bc">NyayaSetu ›</span>
+      <span class="ab-title" id="abar-title">Dashboard</span>
+    </div>
+    <div class="ab-r">
+      <div class="system-status"><span class="status-dot"></span><span>Services online</span></div>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" data-lang="hl" onclick="setLang('hl')">HI-EN</button>
+        <button class="lang-btn" data-lang="hi" onclick="setLang('hi')">हि</button>
+      </div>
+      <button class="abbtn" id="btn-helplines" onclick="go('helplines')"><i data-lucide="phone"></i> Helplines</button>
+      <button class="abbtn pri" id="btn-ai" onclick="go('ai')"><i data-lucide="sparkles"></i> Ask AI</button>
+    </div>
+  </div>
+
+  <div class="ticker-wrap" aria-hidden="true"><div class="ticker-inner">
+    <span class="ticker-item">📚 NSP Scholarship — Apply at scholarships.gov.in</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">⚖️ Free legal aid — Call NALSA: 15100</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">📝 RTI fee waived for BPL citizens — rtionline.gov.in</span><span class="ticker-sep">◆</span>
+  </div></div>
+
+<!-- ══ PANEL: HOME ══ -->
+  <div class="panel active" id="p-home">
+    <div class="pg">
+      <div class="wb"><div class="wb-blob-a"></div><div class="wb-blob-b"></div><div class="wb-grid-lines"></div>
+        <div class="wb-badge" id="hero-badge">🇮🇳 NyayaSetu — AI Empowerment</div>
+        <div class="wb-h" id="hero-h">Know Your Rights.<br><em>Access What's Yours.</em></div>
+        <div class="wb-sub" id="hero-sub">Translating bureaucratic complexity into a clear, guided path. File RTIs, check scheme eligibility, and chat with our AI to auto-fill your legal forms.</div>
+        <div class="wb-btns">
+          <button class="wbtn wbtn-w" id="hero-btn1" onclick="go('eligibility')">🎯 Check Eligibility</button>
+          <button class="wbtn wbtn-r" id="hero-btn2" onclick="go('rti')">📁 Draft RTI</button>
+          <button class="wbtn wbtn-o" id="hero-btn3" onclick="go('ai')">🤖 Conversational AI</button>
+        </div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stc" style="--c:var(--or);"><div class="stc-ico">🎯</div><div class="stc-val" style="color:var(--or);" data-target="23">23</div><div class="stc-lbl">Schemes listed</div></div>
+        <div class="stc"><div class="stc-ico">🤖</div><div class="stc-val" style="color:var(--blu);">API</div><div class="stc-lbl">Live AI Integration</div></div>
+        <div class="stc"><div class="stc-ico">⚖️</div><div class="stc-val" style="color:var(--grn);">Free</div><div class="stc-lbl">Legal aid via NALSA</div></div>
+        <div class="stc"><div class="stc-ico">📞</div><div class="stc-val" style="color:var(--yel);" data-target="12">12</div><div class="stc-lbl">Helplines</div></div>
+      </div>
+
+      <div class="grid3">
+        <div class="ftile" onclick="go('eligibility')"><div class="ft-ico" style="background:var(--or3);">🎯</div><div class="ft-t">Scheme Eligibility</div><div class="ft-d">Answer 5 questions to find schemes you qualify for.</div><div class="ft-arr">→</div></div>
+        <div class="ftile" onclick="go('rights')"><div class="ft-ico" style="background:var(--blu3);">📜</div><div class="ft-t">Rights Navigator</div><div class="ft-d">Search our database for tenant, consumer, or workplace disputes.</div><div class="ft-arr">→</div></div>
+        <div class="ftile" onclick="go('complaint')"><div class="ft-ico" style="background:var(--grnl);">📋</div><div class="ft-t">Complaint Wizard</div><div class="ft-d">Tell us your issue. We'll find the exact portal.</div><div class="ft-arr">→</div></div>
+        <div class="ftile" onclick="go('tracker')"><div class="ft-ico" style="background:var(--yell);">🔍</div><div class="ft-t">NSP Status Guide</div><div class="ft-d">Scholarship stuck? Understand each verification stage.</div><div class="ft-arr">→</div></div>
+        <div class="ftile" onclick="go('rti')"><div class="ft-ico" style="background:var(--purl);">📁</div><div class="ft-t">RTI Drafting Agent</div><div class="ft-d">Auto-format plain English into official RTI applications.</div><div class="ft-arr">→</div></div>
+        <div class="ftile" onclick="go('ai')"><div class="ft-ico" style="background:var(--blu3);">🤖</div><div class="ft-t">Conversational AI</div><div class="ft-d">Instant answers about rights, schemes, and legal options.</div><div class="ft-arr">→</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PANEL: ELIGIBILITY ENGINE ══ -->
+  <div class="panel" id="p-eligibility">
+    <div class="elig-wrap">
+      <div class="section-hd">
+        <div class="lbl-tag">🎯 Smart Filter</div>
+        <div class="ph">Scheme Eligibility Reader</div>
+        <div class="ps">Our algorithm reads government portals to match you with valid schemes.</div>
+      </div>
+      <div class="elig-form">
+        <div class="elig-grid">
+          <div class="fg"><label class="flbl" for="e-cat">Category</label>
+            <select class="finp" id="e-cat">
+              <option value="">Select category</option>
+              <option value="sc">SC</option>
+              <option value="st">ST</option>
+              <option value="obc">OBC</option>
+              <option value="ebc">EBC</option>
+              <option value="dnt">DNT</option>
+              <option value="minority">Minority</option>
+              <option value="general">General / EWS</option>
+            </select>
+          </div>
+          <div class="fg"><label class="flbl" for="e-gen">Gender</label>
+            <select class="finp" id="e-gen">
+              <option value="">Select gender</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+            </select>
+          </div>
+          <div class="fg"><label class="flbl" for="e-income">Annual Family Income</label>
+            <select class="finp" id="e-income">
+              <option value="">Select income range</option>
+              <option value="u1">Below ₹1 lakh</option>
+              <option value="u25">₹1–2.5 lakh</option>
+              <option value="u6">₹2.5–6 lakh</option>
+              <option value="a8">Above ₹8 lakh</option>
+            </select>
+          </div>
+          <div class="fg"><label class="flbl" for="e-edu">Current Education Level</label>
+            <select class="finp" id="e-edu">
+              <option value="">Select level</option>
+              <option value="school">Below Class 10</option>
+              <option value="matric">Class 10</option>
+              <option value="inter">Class 12</option>
+              <option value="ug">Undergraduate (B.Tech, BA, etc.)</option>
+              <option value="pg">Postgraduate</option>
+              <option value="research">Research (M.Phil / Ph.D)</option>
+              <option value="professional">Professional Course</option>
+            </select>
+          </div>
+          <div class="fg"><label class="flbl" for="e-dis">Disability</label>
+            <select class="finp" id="e-dis">
+              <option value="none">No disability</option>
+              <option value="above40">40% or more disability</option>
+            </select>
+          </div>
+        </div>
+        <div class="elig-cta">
+          <button class="elig-btn" onclick="runEligibility()">🎯 Find My Schemes</button>
+        </div>
+      </div>
+      <div class="elig-results" id="elig-results" style="display:none;">
+        <div class="er-hd">
+          <div class="er-title">Matching Schemes</div>
+          <div class="er-count" id="er-cnt">0 schemes found</div>
+        </div>
+        <div class="er-grid" id="er-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PANEL: RIGHTS NAVIGATOR ══ -->
+  <div class="panel" id="p-rights">
+    <div class="pg">
+      <div>
+        <div class="lbl-tag">Constitutional & Legal</div>
+        <div class="ph">Rights Navigator</div>
+        <div class="ps">Click on any card to view detailed constitutional rights and procedures.</div>
+      </div>
+      <div class="grid2">
+        <div class="rcard" style="border-left-color:var(--or);" onclick="openModal('fundamental')" id="r1-card">
+          <div class="rc-badge" style="background:var(--or3);color:var(--or);">Articles 12–35</div>
+          <div class="rc-title" id="r1-t">⚖️ Fundamental Rights</div>
+          <div class="rc-desc" id="r1-d">The core constitutional rights guaranteed to every citizen.</div>
+          <div class="rc-link" id="r1-link">Read details →</div>
+        </div>
+        <div class="rcard" style="border-left-color:var(--blu);" onclick="openModal('minority')" id="r2-card">
+          <div class="rc-badge" style="background:var(--blu3);color:var(--blu);">Articles 25–30</div>
+          <div class="rc-title" id="r2-t">🕌 Minority Rights</div>
+          <div class="rc-desc" id="r2-d">Rights to practice religion and manage institutions.</div>
+          <div class="rc-link" id="r2-link">Read details →</div>
+        </div>
+        <div class="rcard" style="border-left-color:var(--grn);" onclick="openModal('scst')" id="r3-card">
+          <div class="rc-badge" style="background:var(--grnl);color:var(--grn);">SC/ST Act 1989</div>
+          <div class="rc-title" id="r3-t">🛡️ SC/ST Protections</div>
+          <div class="rc-desc" id="r3-d">Legal protections against discrimination and untouchability.</div>
+          <div class="rc-link" id="r3-link">Read details →</div>
+        </div>
+        <div class="rcard" style="border-left-color:var(--pur);" onclick="openModal('women')" id="r4-card">
+          <div class="rc-badge" style="background:var(--purl);color:var(--pur);">DV Act / POSH</div>
+          <div class="rc-title" id="r4-t">♀️ Women's Rights</div>
+          <div class="rc-desc" id="r4-d">Protection from domestic violence, workplace harassment, and anti-dowry laws.</div>
+          <div class="rc-link" id="r4-link">Read details →</div>
+        </div>
+        <div class="rcard" style="border-left-color:var(--teal);" onclick="openModal('disability')" id="r5-card">
+          <div class="rc-badge" style="background:var(--blu3);color:var(--blu);">RPwD Act 2016</div>
+          <div class="rc-title" id="r5-t">♿ Disability Rights</div>
+          <div class="rc-desc" id="r5-d">Job reservations and accessibility mandates.</div>
+          <div class="rc-link" id="r5-link">Read details →</div>
+        </div>
+        <div class="rcard" style="border-left-color:var(--yel);" onclick="openModal('rti')" id="r6-card">
+          <div class="rc-badge" style="background:var(--yell);color:var(--yel);">RTI Act 2005</div>
+          <div class="rc-title" id="r6-t">📁 Right to Information</div>
+          <div class="rc-desc" id="r6-d">Request information from public authorities with a 30-day guarantee.</div>
+          <div class="rc-link" id="r6-link">Read details →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PANEL: RTI DRAFTING AGENT ══ -->
+  <div class="panel" id="p-rti">
+    <div class="pg">
+      <div class="lbl-tag">Automated Drafting</div>
+      <div class="ph">RTI Drafting Agent</div>
+      <div class="ps">Input your query in plain English. The agent formats it into a legal RTI application.</div>
+      <div class="box rti-form-box">
+        <div class="bxh">👤 Your Details</div>
+        <div class="grid2" style="gap:12px;margin-bottom:14px;">
+          <div class="fg"><label class="flbl" for="rti-name">Full Name *</label><input class="finp" id="rti-name" placeholder="e.g. Ramesh Kumar"></div>
+          <div class="fg"><label class="flbl" for="rti-authority">Authority / Dept *</label><input class="finp" id="rti-authority" placeholder="e.g. Municipal Corporation"></div>
+        </div>
+        <div class="fg" style="margin-bottom:14px;">
+          <label class="flbl" for="rti-address">Your Address *</label>
+          <input class="finp" id="rti-address" placeholder="e.g. 12, MG Road, Jaipur, Rajasthan">
+        </div>
+        <div class="rti-tmpl-row">
+          <button type="button" class="rti-tmpl-btn" onclick="rtiSelectTemplate('nsp', this)">Scholarship stuck</button>
+          <button type="button" class="rti-tmpl-btn" onclick="rtiSelectTemplate('caste', this)">Caste certificate delay</button>
+          <button type="button" class="rti-tmpl-btn" onclick="rtiSelectTemplate('fir', this)">FIR copy</button>
+          <button type="button" class="rti-tmpl-btn" onclick="rtiSelectTemplate('scheme', this)">Scheme rejected</button>
+        </div>
+        <div class="fg" style="margin-bottom:14px;">
+          <label class="flbl" for="rti-query-text">Your Query (Plain Language) *</label>
+          <textarea class="finp" id="rti-query-text" rows="5" placeholder="I want to know why the road outside my house hasn't been fixed yet..."></textarea>
+        </div>
+        <label class="rti-bpl-row" for="rti-bpl">
+          <input type="checkbox" id="rti-bpl">
+          <span>I belong to the Below Poverty Line (BPL) category (application fee exempt)</span>
+        </label>
+        <div style="margin-top:16px;">
+          <button class="elig-btn" id="rti-gen-btn" onclick="rtiGenerate()"><i data-lucide="file-text"></i> Generate Official RTI</button>
+        </div>
+      </div>
+      <div class="box" id="rti-output" style="display:none;border:2px solid var(--grn); margin-top:20px;">
+        <div class="bxh" style="color:var(--grn);"><i data-lucide="check-circle-2"></i> Your Official Document is Ready</div>
+        <textarea class="finp rti-letter" id="rti-letter-text" rows="18" readonly aria-label="Generated RTI letter" style="font-family:monospace;font-size:12.5px;background:var(--bg);"></textarea>
+        <div class="rti-actions">
+          <button class="wbtn2" id="rti-copy-btn" onclick="rtiCopy()"><i data-lucide="clipboard-list"></i> Copy to Clipboard</button>
+          <button class="wbtn2" onclick="rtiPrint()"><i data-lucide="printer"></i> Print / Save as PDF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PANEL: CONVERSATIONAL AI ══ -->
+  <div class="panel" id="p-ai">
+    <div class="ai-shell">
+      <div class="ai-hd">
+        <div class="ai-av">🤖</div>
+        <div><div class="ai-nm" id="ai-name">NyayaSetu AI Agent</div><div class="ai-st" id="ai-status-txt"><span class="ai-dot"></span>Secure AI gateway</div></div>
+      </div>
+      <div class="ai-msgs" id="ai-msgs" aria-live="polite" aria-relevant="additions">
+        <div class="amsg bot"><div class="abub">Namaste! 🙏 I'm the NyayaSetu Conversational Form-Filler. <br><br>Describe your civic issue (e.g., consumer dispute, missing scholarship), and I will guide you or auto-populate the necessary forms.</div></div>
+      </div>
+      <div class="ai-qr" id="ai-qr">
+        <button class="qr-b" onclick="sendQ('My NSP scholarship payment is stuck.')">💰 Scholarship stuck</button>
+        <button class="qr-b" onclick="sendQ('How do I file an FIR if police refuse?')">👮 FIR refusal</button>
+        <button class="qr-b" onclick="sendQ('My landlord won\'t return my deposit')">🏠 Tenant rights</button>
+      </div>
+      <div class="ai-inp-row">
+        <input class="ai-inp" id="ai-inp" placeholder="Type your issue here..." onkeydown="if(event.key==='Enter')sendMsg()">
+        <button class="ai-send" id="ai-send-btn" onclick="sendMsg()">Send ➤</button>
+      </div>
+    </div>
+  </div>
+
+   <!-- ══ PANEL: COMPLAINT WIZARD ══ -->
+  <div class="panel" id="p-complaint">
+    <div class="wiz-wrap">
+      <div class="wiz-sb">
+        <div class="wiz-sb-h">Filing Steps</div>
+        <div class="ws act" data-s="1"><div class="ws-n">1</div>Issue Type</div>
+        <div class="ws" data-s="2"><div class="ws-n">2</div>Describe</div>
+        <div class="ws" data-s="3"><div class="ws-n">3</div>Right Portal</div>
+        <div class="ws" data-s="4"><div class="ws-n">4</div>Documents</div>
+        <div class="ws" data-s="5"><div class="ws-n">5</div>Action Plan</div>
+      </div>
+      <div class="wiz-content">
+        <div class="wp act" id="ws1">
+          <div class="wp-h">What issue are you facing?</div>
+          <div class="wp-s">Select the closest match — we'll guide you to the right authority.</div>
+          <div class="grid2">
+            <div class="icard" onclick="selIssue('discrimination',this)"><div class="ic-ico">🚫</div><div><div class="ic-t">Caste / Religious Discrimination</div></div></div>
+            <div class="icard" onclick="selIssue('harassment',this)"><div class="ic-ico">⚠️</div><div><div class="ic-t">Harassment / Violence</div></div></div>
+            <div class="icard" onclick="selIssue('corruption',this)"><div class="ic-ico">💰</div><div><div class="ic-t">Corruption / Bribery</div></div></div>
+            <div class="icard" onclick="selIssue('police',this)"><div class="ic-ico">👮</div><div><div class="ic-t">Police Misconduct</div></div></div>
+            <div class="icard" onclick="selIssue('scheme',this)"><div class="ic-ico">📋</div><div><div class="ic-t">Scheme / Scholarship Denied</div></div></div>
+            <div class="icard" onclick="selIssue('rights',this)"><div class="ic-ico">🏛️</div><div><div class="ic-t">Rights Violation</div></div></div>
+          </div>
+          <div class="wiz-nav"><button class="wbtn2 pri" id="wn1" onclick="wNext()" disabled>Next →</button></div>
+        </div>
+        <div class="wp" id="ws2">
+          <div class="wp-h">Describe your situation</div>
+          <div><label class="flbl">What happened?</label><textarea class="finp" id="w-desc" rows="4"></textarea></div>
+          <div class="grid2">
+            <div><label class="flbl">State / UT</label><input class="finp" type="text" id="w-state"></div>
+          </div>
+          <div class="wiz-nav"><button class="wbtn2" onclick="wPrev()">← Back</button><button class="wbtn2 pri" onclick="wNext()">Next →</button></div>
+        </div>
+        <div class="wp" id="ws3">
+          <div class="wp-h">Where to file your complaint</div>
+          <div id="portal-list"></div>
+          <div class="wiz-nav"><button class="wbtn2" onclick="wPrev()">← Back</button><button class="wbtn2 pri" onclick="wNext()">Next →</button></div>
+        </div>
+        <div class="wp" id="ws4">
+          <div class="wp-h">Documents you'll need</div>
+          <div class="box" id="doc-list"></div>
+          <div class="wiz-nav"><button class="wbtn2" onclick="wPrev()">← Back</button><button class="wbtn2 pri" onclick="wNext()">Next →</button></div>
+        </div>
+        <div class="wp" id="ws5">
+          <div class="wp-h">✅ Your Action Plan</div>
+          <div id="summary"></div>
+          <div class="wiz-nav"><button class="wbtn2" onclick="wReset()">Start Over</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PANEL: LEGAL GUIDANCE ══ -->
+  <div class="panel" id="p-legal">
+    <div class="pg">
+      <div class="lbl-tag">Know the System</div>
+      <div class="ph">Legal Guidance</div>
+      <div class="ps">How to navigate India's legal system and access free legal aid.</div>
+      <div class="box">
+        <div class="bxh">📋 How to File an FIR — Step by Step</div>
+        <div class="fir-timeline">
+          <div class="fstep"><div class="fs-dot">1</div><div class="fs-t">Police Station</div><div class="fs-d">Go to station in whose jurisdiction the incident occurred</div></div>
+          <div class="fstep"><div class="fs-dot">2</div><div class="fs-t">Ask SHO</div><div class="fs-d">Register FIR — FREE, your legal right under Sec. 154 CrPC</div></div>
+          <div class="fstep"><div class="fs-dot">3</div><div class="fs-t">If Refused</div><div class="fs-d">Approach SP/DCP or file with Magistrate under Sec. 156(3) CrPC</div></div>
+          <div class="fstep"><div class="fs-dot">4</div><div class="fs-t">Get Copy</div><div class="fs-d">Always collect FREE copy. Note FIR number.</div></div>
+        </div>
+      </div>
+      <div class="grid3">
+        <div class="lcard" style="border-top-color:var(--or);"><div class="lc-t">🏛️ NALSA — Free Legal Aid</div><div class="lc-d">Call <strong>15100</strong> or visit nalsa.gov.in</div></div>
+        <div class="lcard" style="border-top-color:var(--grn);"><div class="lc-t">✅ Who's Eligible?</div><div class="lc-d">SC/ST, women, children, PwD, income &lt; ₹1 lakh/year.</div></div>
+        <div class="lcard" style="border-top-color:var(--pur);"><div class="lc-t">⚖️ Lok Adalat</div><div class="lc-d">Disputes settled free of court fees. Final and binding award.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PANEL: GRIEVANCE PORTALS ══ -->
+  <div class="panel" id="p-grievance">
+    <div class="pg">
+      <div class="lbl-tag">Official Channels</div>
+      <div class="ph">Grievance Portals Directory</div>
+      <div class="ps">All official complaint portals in one place.</div>
+      <div class="box">
+        <div class="bxh">🏛️ Central Government Portals</div>
+        <div id="griev-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PANEL: NSP TRACKER ══ -->
+  <div class="panel" id="p-tracker">
+    <div class="tracker-wrap">
+      <div class="lbl-tag">🔍 NSP Help</div>
+      <div class="ph">NSP Scholarship Status Guide</div>
+      <div class="ps">Understanding where your application is stuck.</div>
+      <div class="box">
+        <div class="bxh">📊 Application Journey — 5 Stages</div>
+        <div class="tr-timeline">
+          <div class="trt-step"><div class="trt-dot" style="background:var(--grnl);color:var(--grn);border:2px solid var(--grn);">1</div><div class="trt-body"><div class="trt-t">Student Submission</div><div class="trt-d">You fill and submit on scholarships.gov.in.</div></div></div>
+          <div class="trt-step"><div class="trt-dot" style="background:var(--yell);color:var(--yel);border:2px solid var(--yel);">2</div><div class="trt-body"><div class="trt-t">INO Verification</div><div class="trt-d">Your college/school verifies your enrollment.</div></div></div>
+          <div class="trt-step"><div class="trt-dot" style="background:var(--blu3);color:var(--blu);border:2px solid var(--blu);">3</div><div class="trt-body"><div class="trt-t">DNO/SNO Verification</div><div class="trt-d">Government officer verifies certificates.</div></div></div>
+          <div class="trt-step"><div class="trt-dot" style="background:var(--or3);color:var(--or);border:2px solid var(--or);">4</div><div class="trt-body"><div class="trt-t">Ministry Approval</div><div class="trt-d">Ministry approves. Check dashboard for "Approved" status.</div></div></div>
+          <div class="trt-step"><div class="trt-dot" style="background:var(--grnl);color:var(--grn);border:2px solid var(--grn);">5</div><div class="trt-body"><div class="trt-t">DBT Transfer</div><div class="trt-d">Money sent via PFMS to Aadhaar-linked account.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PANEL: HELPLINES ══ -->
+  <div class="panel" id="p-helplines">
+    <div class="pg">
+      <div class="lbl-tag">Emergency & Specialized</div>
+      <div class="ph">Helpline Directory</div>
+      <div class="ps">Direct numbers for every situation — available 24/7.</div>
+      <div class="grid3" id="hline-grid"></div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-ov" id="modal" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-hd"><div class="modal-title" id="modal-title"></div><button class="modal-cls" onclick="closeModal()" aria-label="Close dialog">✕</button></div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="data.js"></script>
+<script src="ui.js"></script>
+<script>
+// INIT SPA Navigation
+function go(id){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.ni').forEach(n=>n.classList.remove('active'));
+  document.getElementById('p-'+id).classList.add('active');
+  const ni=document.querySelector('[data-p="'+id+'"]');
+  if(ni) ni.classList.add('active');
+  window.currentPanel=id;
+  if(id==='grievance' && typeof renderGrievance==='function') renderGrievance();
+  if(id==='helplines' && typeof renderHelplines==='function') renderHelplines();
+  const titleMap={home:'Dashboard',eligibility:'Scheme Eligibility',rights:'Rights Navigator',rti:'RTI Drafting Agent',complaint:'File Complaint',legal:'Legal Guidance',grievance:'Grievance Portals',tracker:'NSP Status Guide',helplines:'Helpline Directory',ai:'Conversational AI',about:'About NyayaSetu',profile:'Profile & Settings'};
+  const title=document.getElementById('abar-title');
+  if(title) title.textContent=titleMap[id]||'NyayaSetu';
+  requestAnimationFrame(hydrateIcons);
+}
+go('home');
+</script>
+</body>
+</html>
