@@ -34,7 +34,7 @@ These steps apply to any platform that runs `npm install` + `npm start` (Render,
 3. Build command: `npm install`  ·  Start command: `npm start`
 4. Add environment variables in the platform's dashboard (not in code):
    - `GEMINI_API_KEY` — your real key
-   - `GEMINI_MODEL` — e.g. `gemini-2.5-flash`
+   - `GEMINI_MODEL` — e.g. `gemini-3.6-flash`
    - `NODE_ENV` — `production`
    - `PORT` — most platforms set this automatically; the app reads `process.env.PORT`
 5. Deploy. The app serves both the frontend and `/api/chat` from the same Express server, so there's no separate frontend deployment step and no CORS setup needed.
