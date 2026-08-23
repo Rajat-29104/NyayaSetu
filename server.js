@@ -124,8 +124,9 @@ app.use('/api', (_req, res) => {
   res.status(404).json({ error: 'Not found.' });
 });
 
-app.listen(PORT, () => {
-  console.log(`NyayaSetu running at http://localhost:${PORT} (${NODE_ENV})`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`NyayaSetu running on port ${PORT}`);
+});
   if (!GEMINI_API_KEY) {
     console.warn('⚠️  GEMINI_API_KEY is not set — /api/chat will return 503 until it is configured.');
   }
