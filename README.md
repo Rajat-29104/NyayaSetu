@@ -199,7 +199,7 @@ Create a `.env` file in the project root (never commit this file):
 | Variable | Required | Description |
 |---|---|---|
 | `GEMINI_API_KEY` | ✅ Yes | Your Gemini API key. Without it, all other features work — only the AI chat returns a friendly "not configured" message. |
-| `GEMINI_MODEL` | No | Gemini model name. Defaults to `gemini-2.5-flash`. Check [Google AI Studio](https://aistudio.google.com/app/apikey) for the latest available model name. |
+| `GEMINI_MODEL` | No | Gemini model name. Defaults to `gemini-3.6-flash`. Check [Google AI Studio](https://aistudio.google.com/app/apikey) for the latest available model name. |
 | `PORT` | No | Port the server listens on. Defaults to `3000` (Render sets this automatically in production). |
 | `NODE_ENV` | No | `development` or `production`. |
 
